@@ -1,11 +1,53 @@
-*,
-*::after,
-*::before {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
+@use './reset' as *;
+
+body {
+	font-size: 1.25rem;
+	color: lch(15% 50 230);
+	display: grid;
+	place-items: center;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-h1 {
-	color: lch(50% 20 180);
+.app {
+	display: grid;
+	gap: 1rem;
+	justify-items: center;
+	max-width: 60ch;
+	text-align: center;
+
+	.logo {
+		position: relative;
+		margin-bottom: 1rem;
+	}
+
+	.bg-logo {
+		position: absolute;
+		z-index: -1;
+		inset: 0;
+		background: linear-gradient( -45deg, #bd34fe 50%, #47caff 50%);
+		scale: 1.25;
+		filter: blur(26px);
+	}
+
+	img {
+		animation: hover 1s ease-in-out infinite alternate;
+	}
+
+	a {
+		padding: 12px;
+		border-radius: 6px;
+
+		&:hover {
+			background-color: #eee;
+		}
+	}
+}
+
+@keyframes hover {
+	from {
+		translate: 0 -5px;
+	}
+	to {
+		translate: 0 5px;
+	}
 }
