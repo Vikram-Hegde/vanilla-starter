@@ -1,20 +1,18 @@
 @use './reset' as *;
 
-@custom-media --narrow-width (width <= 760px);
+[data-theme='dark'] {
+	color-scheme: dark;
+}
 
-html {
-	color-scheme: dark light;
+[data-theme='light'] {
+	color-scheme: light;
 }
 
 body {
-	font-size: 1.25rem;
 	display: grid;
 	place-items: center;
-	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
-	@media (--narrow-width) {
-		background-color: #bd34fe;
-	}
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	line-height: 1.5;
 }
 
 .app {
@@ -44,11 +42,11 @@ body {
 	}
 
 	a {
-		padding: 12px;
+		padding: 0.75em;
 		border-radius: 6px;
 
 		&:hover {
-			background-color: hsla(0 0% 100% / 0.15);
+			background-color: hsl(0 0% 0% / 0.15);
 		}
 	}
 }
